@@ -29,8 +29,6 @@ A product shop api.
 
 
 
-### Where to find source code ?
-* #### [github](https://github.com/w0l1d/imedia24-backendcodingtaskassignement1)
 ### Where to find docker image ?
 * #### [docker image](https://hub.docker.com/r/sedev17/imedia24-backendcodingtaskassignement1)
 
