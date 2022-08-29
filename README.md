@@ -1,16 +1,36 @@
 # iMedia24 Coding challenge
+A product shop api.
 
-### Reference Documentation
-For further reference, please consider the following sections:
 
-* [Official Gradle documentation](https://docs.gradle.org)
-* [Official Kotlin documentation](https://kotlinlang.org/docs/home.html)
-* [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.4.3/gradle-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.4.3/gradle-plugin/reference/html/#build-image)
-* [Flyway database migration tool](https://flywaydb.org/documentation/)
+## Feature:
+- create, read, update operations on products
 
-### Additional Links
-These additional references should also help you:
+## Technologies used :
+* #### kotlin
+* #### jdk 8
+* #### gradle 6.8.2
+* #### spring 2.4.3
 
-* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
+## Prerequisites
+* Docker
+
+## Setting up the spring project
+* Get a Docker Image
+  * to create docker image from dockerfile
+    * open terminal on the root folder of the project
+    * run this command :
+      * `docker build --build-arg JAR_FILE=build/libs/*.jar -t docker-imedia24-walid .`
+  * to get online image :
+    * `docker pull w0l1d/imedia24-walid-assignment`
+    * `docker tag docker-imedia24-walid w0l1d/imedia24-walid-assignment `
+
+* Start the application on port **_8090_** :
+  * `docker run -p 8090:8080 -t docker-imedia24-walid .`
+
+
+
+### Where to find source code ?
+* #### [github](https://github.com/w0l1d/shop_imedia24_walid)
+### Where to find docker image ?
+* #### [docker image](https://hub.docker.com/repository/docker/w0l1d/imedia24-walid-assignment)
 

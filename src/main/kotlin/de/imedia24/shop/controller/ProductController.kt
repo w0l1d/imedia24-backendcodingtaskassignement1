@@ -9,13 +9,13 @@ import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PatchMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
-import java.util.*
-import javax.websocket.server.PathParam
+
 
 @RestController
 class ProductController(private val productService: ProductService) {
@@ -52,11 +52,11 @@ class ProductController(private val productService: ProductService) {
     )
     @GetMapping("/products", produces = ["application/json;charset=utf-8"])
     fun getProductsBySku(
-            @RequestParam("skus") skus: String
+            @RequestParam("skus") skus: List<String>
     ): ResponseEntity<List<ProductResponse>> {
         logger.info("Request for products $skus")
 
-        val product = productService.findAllProductsBySku(skus.split(','))
+        val product = productService.findAllProductsBySku(skus)
 
         return if(product.isEmpty()) {
             ResponseEntity.notFound().build()
@@ -95,7 +95,7 @@ class ProductController(private val productService: ProductService) {
                 ApiResponse(responseCode = "404", description = "Product with the given sku not found"),
             ]
     )
-    @PostMapping("/product/{sku}", produces = ["application/json;charset=utf-8"])
+    @PatchMapping("/product/{sku}", produces = ["application/json;charset=utf-8"])
     fun updateProduct(
             @PathVariable("sku") sku: String,
             @RequestBody product: ProductResponse
