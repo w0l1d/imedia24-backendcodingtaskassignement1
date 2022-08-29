@@ -29,3 +29,6 @@ spring:
           batch_size: 1000
     hibernate:
       ddl-auto: validate
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: false
