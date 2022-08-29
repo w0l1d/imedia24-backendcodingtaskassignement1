@@ -10,7 +10,8 @@ data class ProductResponse(
         @field:Schema(
                 description = "Identifier of a product",
                 example = "123",
-                type = "String"
+                type = "String",
+                maxLength = 16
         )
         val sku: String,
         @field:Schema(
@@ -22,10 +23,9 @@ data class ProductResponse(
         @field:Schema(
                 description = "Description of a product",
                 example = "Printing Paper is a high quality printer" +
-                        " paper made from 100% recycled fiber." +
-                        " Printing Paper is ideal for printing photos, posters," +
-                        " greeting cards, invitations, business cards, and more!",
-                type = "String"
+                        " paper made from 100% recycled fiber.",
+                type = "String",
+                maxLength = 125
         )
         val description: String,
         @field:Schema(

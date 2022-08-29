@@ -34,3 +34,5 @@ A product shop api.
 ### Where to find docker image ?
 * #### [docker image](https://hub.docker.com/repository/docker/w0l1d/imedia24-walid-assignment)
 
+### Swagger Documentation is avaliable on : 
+* #### [localhost:8080/swagger-ui/index.html](localhost:8080/swagger-ui/index.html)
